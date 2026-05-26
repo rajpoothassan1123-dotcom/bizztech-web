@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Trade & Distribution Specialists</title>
+    <meta name="description" content="Connecting premium consumer electronics brands with B2B retail networks and supply chain excellence.">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        /* Custom marquee animation for brands section */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-white text-gray-900 font-sans antialiased">
+
+    <!-- 1. NAVIGATION HEADER (Glassmorphism Effect) -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-200/50 bg-white/80 backdrop-blur-lg">
+        <div class="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+            <!-- Logo / Brand Name -->
+            <a href="#" class="flex items-center gap-2 text-xl font-bold tracking-tight text-gray-900">
+                <span class="text-orange-600"><i class="fa-solid fa-network-wired"></i></span> BIZZ.TECH
+            </a>
+            
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-2">
+                <a href="#about" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors px-3 py-2 rounded-md hover:bg-gray-50">About</a>
+                <a href="#brands" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors px-3 py-2 rounded-md hover:bg-gray-50">Brands</a>
+                <a href="#services" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors px-3 py-2 rounded-md hover:bg-gray-50">Services</a>
+                <a href="#contact" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors px-3 py-2 rounded-md hover:bg-gray-50">Contact</a>
+            </nav>
+
+            <!-- Action Button -->
+            <div class="flex items-center gap-4">
+                <a class="hidden md:inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white h-10 px-5 text-sm font-medium rounded-lg transition-colors shadow-sm" href="#contact">
+                    Become a Partner &rarr;
+                </a>
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2 text-gray-600 hover:text-gray-900 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Spacer for Fixed Header -->
+    <div class="h-16"></div>
+
+    <main class="flex-1">
+        
+        <!-- 2. HERO SECTION -->
+        <section class="relative min-h-[80vh] flex items-center bg-gradient-to-b from-[#0a1628] to-[#1a2d4a] text-white overflow-hidden">
+            <!-- Subtle Grid Pattern Overlay -->
+            <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+            
+            <div class="container mx-auto px-4 md:px-6 py-24 relative z-10">
+                <div class="max-w-4xl">
+                    <span class="inline-block text-sm font-semibold tracking-wide uppercase text-orange-400 mb-6 bg-orange-500/10 px-3 py-1 rounded-full">
+                        Global Trade & Sourcing Solutions
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                        Smart Technology <span class="text-orange-400">Distribution</span><br/>
+                        <span class="text-2xl sm:text-3xl md:text-4xl text-gray-300 font-normal">Connecting Premium Brands with Global Markets</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 max-w-2xl mb-10 leading-relaxed">
+                        Your strategic partner for wholesale international trade. We specialize in sourcing, full logistical execution, and supply fulfillment for premium consumer electronics, devices, and accessories.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white h-14 px-8 text-lg font-semibold rounded-lg transition-colors shadow-md" href="#contact">
+                            Become a Partner &rarr;
+                        </a>
+                        <a class="inline-flex items-center justify-center border border-white/30 hover:bg-white/10 text-white h-14 px-8 text-lg font-semibold rounded-lg transition-colors" href="#about">
+                            Explore Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FLOATING METRICS SECTION -->
+        <section class="relative -mt-16 z-20 px-4 md:px-6">
+            <div class="container mx-auto">
+                <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center border-r border-gray-100 last:border-0">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-600 mb-2">10K+</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Units Distributed Daily</div>
+                    </div>
+                    <div class="text-center md:border-r border-gray-100 last:border-0">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-600 mb-2">25+</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Premium Tech Brands</div>
+                    </div>
+                    <div class="text-center border-r border-gray-100 last:border-0">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-600 mb-2">20+</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Countries Connected</div>
+                    </div>
+                    <div class="text-center last:border-0">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-600 mb-2">99.8%</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Fulfillment Accuracy</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ABOUT SECTION (Two Columns) -->
+        <section id="about" class="py-24 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="text-sm font-semibold tracking-wide uppercase text-orange-600 mb-4 block">Corporate Profile</span>
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-6">
+                            Experts in Wholesale Procurement & High-Volume Logistics
+                        </h2>
+                        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                            We do more than move boxes; we orchestrate supply chains. Leveraging dynamic trade data and global manufacturer ecosystems, we provide agile fulfillment solutions that mitigate risk and capitalize on high market demand.
+                        </p>
+                        
+                        <!-- Core Pillars Icons List -->
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 shrink-0 shadow-sm">
+                                    <i class="fa-solid fa-boxes-stacked"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900 text-lg">Scalable Order Infrastructure</h3>
+                                    <p class="text-gray-600 text-sm mt-1">From specialized single-pallet priority shipments to 10,000+ wholesale container batches—our processing operates seamlessly across multiple hubs.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 shrink-0 shadow-sm">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900 text-lg">Data-Backed Sourcing Strategy</h3>
+                                    <p class="text-gray-600 text-sm mt-1">Utilizing predictive global trade analytics platforms to source top-tier tech inventory under hyper-competitive pricing spreads.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stylized Graphic/Placeholder Container -->
+                    <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-900 shadow-lg flex items-center justify-center p-8">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-[#0a1628] to-transparent opacity-90"></div>
+                        <div class="relative z-10 text-center">
+                            <i class="fa-solid fa-warehouse text-6xl text-orange-500 mb-4"></i>
+                            <h4 class="text-white font-bold text-xl mb-2">Global Logistics Core</h4>
+                            <p class="text-gray-300 text-sm max-w-sm">Fully secure supply tracking, real-time inventory verification, and comprehensive asset protection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. BRAND PORTFOLIO (Infinite Scrolling Marquee) -->
+        <section id="brands" class="py-16 bg-gray-50 overflow-hidden border-y border-gray-100">
+            <div class="container mx-auto px-4 md:px-6 mb-10 text-center">
+                <span class="text-sm font-semibold tracking-wide uppercase text-orange-600 mb-2 block">Brand Ecosystem</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Supported Technology Sectors</h2>
+            </div>
+            
+            <!-- Infinite Marquee Track Container -->
+            <div class="relative flex items-center w-full">
+                <!-- Left/Right Faders -->
+                <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
+                <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
+                
+                <!-- Track List -->
+                <div class="marquee-track gap-8">
+                    <!-- Cards (Repeated twice to enable seamless loop) -->
+                    <div class="w-48 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-4">
+                        <i class="fa-solid fa-mobile-screen-button text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Smartphones</span>
+                    </div>
+                    <div class="w-48 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-4">
+                        <i class="fa-solid fa-laptop text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Laptops & PCs</span>
+                    </div>
+                    <div class="w-48 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-4">
+                        <i class="fa-solid fa-watch-fitness text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Wearables</span>
+                    </div>
+                    <div class="w-48 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-4">
+                        <i class="fa-solid fa-house-signal text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Smart Home IoT</span>
+                    </div>
+                    <div class="w-48 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-4">
+                        <i class="fa-solid fa-headphones text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Audio Tech</span>
+                    </div>
+                    
+                    <!-- Duplicated set for loop layout match -->
+                    <div class="w-48 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-4">
+                        <i class="fa-solid fa-mobile-screen-button text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Smartphones</span>
+                    </div>
+                    <div class="w-48 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-4">
+                        <i class="fa-solid fa-laptop text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Laptops & PCs</span>
+                    </div>
+                    <div class="w-48 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-4">
+                        <i class="fa-solid fa-watch-fitness text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Wearables</span>
+                    </div>
+                    <div class="w-48 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-4">
+                        <i class="fa-solid fa-house-signal text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Smart Home IoT</span>
+                    </div>
+                    <div class="w-48 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-4">
+                        <i class="fa-solid fa-headphones text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Audio Tech</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CONTACT PARTNERSHIP SECTION -->
+        <section id="contact" class="py-24 bg-white">
+            <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+                <div class="text-center mb-12">
+                    <span class="text-sm font-semibold tracking-wide uppercase text-orange-600 mb-2 block">B2B Integration</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Initialize Partner Onboarding</h2>
+                    <p class="text-gray-600">Connect with our distribution managers to request full catalog credentials and pricing structures.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 md:p-10 rounded-2xl border border-gray-100 shadow-sm">
+                    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-500 mb-2">Full Name</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 focus:outline-none focus:border-orange-500 text-sm transition-colors shadow-inner" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-500 mb-2">Corporate Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 focus:outline-none focus:border-orange-500 text-sm transition-colors shadow-inner" placeholder="name@company.com">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-semibold uppercase text-gray-500 mb-2">Company Entity Name</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 focus:outline-none focus:border-orange-500 text-sm transition-colors shadow-inner" placeholder="Registered Company Ltd.">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-semibold uppercase text-gray-500 mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 focus:outline-none focus:border-orange-500 text-sm transition-colors shadow-inner" placeholder="Outline your inventory demand or supplier sourcing capabilities..."></textarea>
+                        </div>
+                        <div class="md:col-span-2 text-right">
+                            <button type="submit" class="w-full md:w-auto inline-flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white font-medium px-8 py-3.5 rounded-lg transition-colors shadow-sm text-sm">
+                                Submit Application &rarr;
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 7. CORPORATE FOOTER -->
+    <footer class="border-t border-gray-200 bg-gray-50 text-gray-600">
+        <div class="container mx-auto px-4 md:px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+            <div class="flex items-center gap-2 font-bold text-gray-900">
+                <span class="text-orange-600"><i class="fa-solid fa-network-wired"></i></span> BIZZ.TECH
+            </div>
+            <p>&copy; 2026 Bizz.Tech. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-gray-900 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-900 transition-colors">Terms of Trade</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
