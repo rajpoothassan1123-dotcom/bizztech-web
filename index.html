@@ -345,6 +345,14 @@
             </div>
         </div>
     </footer>
+<script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
+        menuBtn.addEventListener('click', () => {
+            // Toggles the 'hidden' class to open and close the menu drawer
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
