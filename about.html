@@ -140,6 +140,14 @@
             <p>&copy; 2026 Bizz.Tech. All rights reserved.</p>
         </div>
     </footer>
+<!-- MOBILE MENU INTERACTION SCRIPT -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
