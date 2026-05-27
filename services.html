@@ -12,6 +12,7 @@
 </head>
 <body class="min-h-screen flex flex-col bg-white text-gray-900 font-sans antialiased">
 
+    <!-- NAVIGATION HEADER (With Functional Mobile Menu) -->
     <header class="fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-200/50 bg-white/80 backdrop-blur-lg">
         <div class="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
             <a href="index.html" class="flex items-center gap-2 text-xl font-bold tracking-tight text-gray-900">
@@ -27,7 +28,21 @@
                 <a class="hidden md:inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white h-10 px-5 text-sm font-medium rounded-lg transition-colors shadow-sm" href="index.html#contact">
                     Become a Partner &rarr;
                 </a>
+                <button id="menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-gray-900 focus:outline-none cursor-pointer" aria-label="Toggle navigation Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
             </div>
+        </div>
+
+        <!-- Hidden Mobile Navigation Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-2 shadow-md">
+            <a href="about.html" class="block text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-3 py-2.5 rounded-lg transition-colors">About</a>
+            <a href="vendors.html" class="block text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-3 py-2.5 rounded-lg transition-colors">Brands</a>
+            <a href="services.html" class="block text-base font-medium text-orange-600 bg-orange-50 px-3 py-2.5 rounded-lg transition-colors font-semibold">Services</a>
+            <a href="index.html#contact" class="block text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-3 py-2.5 rounded-lg transition-colors">Contact</a>
+            <a href="index.html#contact" class="block text-center bg-orange-600 hover:bg-orange-700 text-white font-medium py-2.5 rounded-lg text-sm transition-colors shadow-sm mt-4">
+                Become a Partner &rarr;
+            </a>
         </div>
     </header>
 
@@ -145,6 +160,14 @@
             <p>&copy; 2026 Bizz.Tech. All rights reserved.</p>
         </div>
     </footer>
+<!-- MOBILE MENU INTERACTION SCRIPT -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
