@@ -12,18 +12,25 @@
 </head>
 <body class="min-h-screen flex flex-col bg-white text-gray-900 font-sans antialiased">
 
-    <!-- NAVIGATION HEADER (With Functional Mobile Menu) -->
-    <!-- REPLACEMENT LOGO FOR BRANDS/VENDORS -->
-<a href="index.html" class="flex items-center">
-    <img src="./logo.png" alt="BIZZ.TECH Logo" class="h-8 md:h-9 w-auto object-contain transition-transform hover:scale-102">
-</a>
+    <!-- NAVIGATION HEADER (Structurally Restored & Fixed) -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-200/50 bg-white/80 backdrop-blur-lg">
+        <div class="container mx-auto flex h-16 items-center justify-between px-4 md:px-6 whitespace-nowrap">
+            
+            <!-- Left: Logo Link -->
+            <a href="index.html" class="flex items-center shrink-0">
+                <img src="./logo.png" alt="BIZZ.TECH Logo" class="h-7 sm:h-8 md:h-9 w-auto object-contain transition-transform hover:scale-102">
+            </a>
+
+            <!-- Center: Desktop Nav Links -->
             <nav class="hidden lg:flex items-center gap-2">
                 <a href="about.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors px-3 py-2 rounded-md hover:bg-gray-50">About</a>
                 <a href="vendors.html" class="text-sm font-medium text-orange-600 transition-colors px-3 py-2 rounded-md bg-orange-50 font-semibold">Brands</a>
                 <a href="services.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors px-3 py-2 rounded-md hover:bg-gray-50">Services</a>
                 <a href="index.html#contact" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors px-3 py-2 rounded-md hover:bg-gray-50">Contact</a>
             </nav>
-            <div class="flex items-center gap-4">
+
+            <!-- Right: Action Button / Mobile Toggler -->
+            <div class="flex items-center gap-4 shrink-0">
                 <a class="hidden md:inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white h-10 px-5 text-sm font-medium rounded-lg transition-colors shadow-sm" href="index.html#contact">
                     Become a Partner &rarr;
                 </a>
@@ -143,12 +150,13 @@
     <footer class="border-t border-gray-200 bg-gray-50 text-gray-600">
         <div class="container mx-auto px-4 md:px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
             <div class="flex items-center gap-2 font-bold text-gray-900">
-                <span class="text-orange-600"><i class="fa-solid fa-network-wired"></i></span> BIZZ.TECH
+                 BIZZ.TECH
             </div>
             <p>&copy; 2026 Bizz.Tech. All rights reserved.</p>
         </div>
     </footer>
-<!-- MOBILE MENU INTERACTION SCRIPT -->
+
+    <!-- MOBILE MENU INTERACTION SCRIPT -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
