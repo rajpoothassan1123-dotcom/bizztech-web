@@ -265,19 +265,25 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     
                     <div>
-                        <span class="text-xs font-bold tracking-wider uppercase text-orange-600 mb-2 block">Market Insights Feed</span>
-                        <h2 class="text-2xl font-bold text-gray-900 tracking-tight mb-3">Subscribe to Our Trading Updates</h2>
-                        <p class="text-sm text-gray-600 max-w-md leading-relaxed mb-6">
-                            Receive real-time market data analysis, incoming brand allocations, and high-volume wholesale availability announcements directly to your corporate inbox.
-                        </p>
-                        
-                        <form class="flex flex-col sm:flex-row gap-2 max-w-md" onsubmit="event.preventDefault(); alert('Thank you for subscribing to BIZZ.TECH updates.');">
-                            <input type="email" required class="flex-1 px-4 py-3 rounded-lg bg-white border border-gray-200 focus:outline-none focus:border-orange-500 text-sm transition-colors shadow-inner" placeholder="Enter corporate email...">
-                            <button type="submit" class="bg-[#0a1628] hover:bg-[#1a2d4a] text-white font-medium px-6 py-3 rounded-lg transition-colors text-sm shrink-0 shadow-sm">
-                                Subscribe
-                            </button>
-                        </form>
-                    </div>
+    <span class="text-xs font-bold tracking-wider uppercase text-orange-600 mb-2 block">Market Insights Feed</span>
+    <h2 class="text-2xl font-bold text-gray-900 tracking-tight mb-3">Subscribe to Our Trading Updates</h2>
+    <p class="text-sm text-gray-600 max-w-md leading-relaxed mb-6">
+        Receive real-time market data analysis, incoming brand allocations, and high-volume wholesale availability announcements directly to your corporate inbox.
+    </p>
+    
+    <!-- LIVE NEWSLETTER FORM CONNECTED TO WEB3FORMS -->
+    <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col sm:flex-row gap-2 max-w-md">
+        <!-- 💡 PASTE YOUR UNIQUE ACCESS KEY VALUE BELOW -->
+        <input type="hidden" name="access_key" value="5e5f5ae2-fb6b-4bd3-b63f-57c414446126">
+        <input type="hidden" name="redirect" value="https://bizztech.online">
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <input type="email" name="subscriber_email" required class="flex-1 px-4 py-3 rounded-lg bg-white border border-gray-200 focus:outline-none focus:border-orange-500 text-sm transition-colors shadow-inner" placeholder="Enter corporate email...">
+        <button type="submit" class="bg-[#0a1628] hover:bg-[#1a2d4a] text-white font-medium px-6 py-3 rounded-lg transition-colors text-sm shrink-0 shadow-sm cursor-pointer">
+            Subscribe
+        </button>
+    </form>
+</div>
 
                     <div class="lg:pl-12 border-t lg:border-t-0 lg:border-l border-gray-200 pt-10 lg:pt-0">
                         <span class="text-xs font-bold tracking-wider uppercase text-gray-500 mb-4 block">Corporate Ecosystem Links</span>
