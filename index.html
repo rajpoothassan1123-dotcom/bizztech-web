@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Trade & Distribution Specialists</title>
-    <meta name="description" content="Connecting premium consumer electronics brands with B2B retail networks and supply chain excellence.">
+    <title>BIZZ.TECH — Electronics Distribution & Wholesale in Pakistan</title>
+    <meta name="description" content="BIZZ.TECH is a Pakistan-based ecommerce and distribution company supplying genuine smartphones, laptops, audio and accessories to retailers and wholesale buyers.">
+    <link rel="canonical" href="https://bizztech.online/">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#0a1628">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BIZZ.TECH">
+    <meta property="og:title" content="BIZZ.TECH — Electronics Distribution & Wholesale in Pakistan">
+    <meta property="og:description" content="BIZZ.TECH is a Pakistan-based ecommerce and distribution company supplying genuine smartphones, laptops, audio and accessories to retailers and wholesale buyers.">
+    <meta property="og:url" content="https://bizztech.online/">
+    <meta property="og:image" content="https://bizztech.online/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_PK">
+    <meta name="twitter:card" content="summary_large_image">
     <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -91,7 +106,7 @@
                         <a class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white h-14 px-8 text-lg font-semibold rounded-lg transition-colors shadow-md" href="#contact">
                             Become a Partner &rarr;
                         </a>
-                        <a class="inline-flex items-center justify-center border border-white/30 hover:bg-white/10 text-white h-14 px-8 text-lg font-semibold rounded-lg transition-colors" href="#about">
+                        <a class="inline-flex items-center justify-center border border-white/30 hover:bg-white/10 text-white h-14 px-8 text-lg font-semibold rounded-lg transition-colors" href="services.html">
                             Explore Services
                         </a>
                     </div>
@@ -195,7 +210,7 @@
                         <i class="fa-solid fa-laptop text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Laptops & PCs</span>
                     </div>
                     <div class="w-48 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-4">
-                        <i class="fa-solid fa-watch-fitness text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Wearables</span>
+                        <i class="fa-solid fa-clock text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Wearables</span>
                     </div>
                     <div class="w-48 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-4">
                         <i class="fa-solid fa-house-signal text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Smart Home IoT</span>
@@ -212,7 +227,7 @@
                         <i class="fa-solid fa-laptop text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Laptops & PCs</span>
                     </div>
                     <div class="w-48 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-4">
-                        <i class="fa-solid fa-watch-fitness text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Wearables</span>
+                        <i class="fa-solid fa-clock text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Wearables</span>
                     </div>
                     <div class="w-48 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-4">
                         <i class="fa-solid fa-house-signal text-2xl text-gray-400 mb-2"></i><span class="text-sm font-semibold text-gray-700">Smart Home IoT</span>
@@ -233,8 +248,10 @@
                 </div>
                 
                 <div class="bg-gray-50 p-8 md:p-10 rounded-2xl border border-gray-100 shadow-sm">
-                    <form action="https://api.web3forms.com/submit" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6" data-web3form data-success="Thank you! Your enquiry has been received. Our team will get back to you shortly.">
                         <input type="hidden" name="access_key" value="5e5f5ae2-fb6b-4bd3-b63f-57c414446126">
+                        <input type="hidden" name="subject" value="New Partner Enquiry - bizztech.online">
+                        <input type="hidden" name="from_name" value="BIZZ.TECH Website">
                         <input type="hidden" name="redirect" value="https://bizztech.online">
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
@@ -275,9 +292,10 @@
     </p>
     
     <!-- LIVE NEWSLETTER FORM CONNECTED TO WEB3FORMS -->
-    <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col sm:flex-row gap-2 max-w-md">
-        <!-- 💡 PASTE YOUR UNIQUE ACCESS KEY VALUE BELOW -->
+    <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col sm:flex-row gap-2 max-w-md" data-web3form data-success="You're subscribed! We'll send stock updates to your inbox.">
         <input type="hidden" name="access_key" value="5e5f5ae2-fb6b-4bd3-b63f-57c414446126">
+        <input type="hidden" name="subject" value="New Newsletter Subscriber - bizztech.online">
+        <input type="hidden" name="from_name" value="BIZZ.TECH Website">
         <input type="hidden" name="redirect" value="https://bizztech.online">
         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
@@ -362,5 +380,6 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
+    <script src="site.js" defer></script>
 </body>
 </html>
