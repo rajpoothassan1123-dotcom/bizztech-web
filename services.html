@@ -20,7 +20,11 @@
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="en_PK">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>body{font-family:'Geist',ui-sans-serif,system-ui,sans-serif}</style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         html { scroll-behavior: smooth; }
@@ -28,38 +32,31 @@
 </head>
 <body class="min-h-screen flex flex-col bg-white text-gray-900 font-sans antialiased">
 
-    <!-- NAVIGATION HEADER (With Functional Mobile Menu) -->
-    <header class="fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-200/50 bg-white/80 backdrop-blur-lg">
-        <div class="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-            <!-- GLOBAL ENTERPRISE LOGO LINK -->
-<a href="index.html" class="flex items-center shrink-0">
-    <img src="./logo.png" alt="BIZZ.TECH Logo" class="h-7 sm:h-8 md:h-9 w-auto object-contain transition-transform hover:scale-102">
-</a>
-            <nav class="hidden lg:flex items-center gap-2">
-                <a href="about.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors px-3 py-2 rounded-md hover:bg-gray-50">About</a>
-                <a href="vendors.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors px-3 py-2 rounded-md hover:bg-gray-50">Brands</a>
-                <a href="services.html" class="text-sm font-medium text-orange-600 transition-colors px-3 py-2 rounded-md bg-orange-50 font-semibold">Wholesale &amp; Retail</a>
-                <a href="index.html#contact" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors px-3 py-2 rounded-md hover:bg-gray-50">Contact</a>
+    <!-- HEADER -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+        <div class="max-w-6xl mx-auto flex h-16 items-center justify-between px-5">
+            <a href="index.html" class="text-xl font-extrabold italic tracking-wide" aria-label="BIZZ.TECH home">BIZZ<span class="text-red-500">.</span><span class="text-orange-600">TECH</span></a>
+            <nav class="hidden lg:flex items-center gap-1 text-sm text-gray-600">
+                <a href="about.html" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">About</a>
+                <a href="index.html#categories" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">Products</a>
+                <a href="vendors.html" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">Brands</a>
+                <a href="services.html" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">Wholesale &amp; Retail</a>
+                <a href="index.html#faq" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">FAQ</a>
             </nav>
-            <div class="flex items-center gap-4">
-                <a class="hidden md:inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white h-10 px-5 text-sm font-medium rounded-lg transition-colors shadow-sm" href="index.html#contact">
-                    Get Prices &rarr;
+            <div class="flex items-center gap-2">
+                <a href="index.html#contact" class="hidden md:inline-flex items-center gap-3 pl-5 pr-1.5 h-10 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 text-white text-sm font-medium shadow-[0_6px_20px_-6px_rgba(234,88,12,.7)] hover:brightness-105">
+                    Get Prices <span class="w-7 h-7 rounded-full bg-[#0a1628] grid place-items-center"><i class="fa-solid fa-arrow-right text-xs"></i></span>
                 </a>
-                <button id="menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-gray-900 focus:outline-none cursor-pointer" aria-label="Toggle navigation Menu">
-                    <i class="fa-solid fa-bars text-xl"></i>
-                </button>
+                <button id="menu-btn" class="lg:hidden p-2 text-gray-700" aria-label="Toggle navigation menu"><i class="fa-solid fa-bars text-xl"></i></button>
             </div>
         </div>
-
-        <!-- Hidden Mobile Navigation Drawer Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-2 shadow-md">
-            <a href="about.html" class="block text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-3 py-2.5 rounded-lg transition-colors">About</a>
-            <a href="vendors.html" class="block text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-3 py-2.5 rounded-lg transition-colors">Brands</a>
-            <a href="services.html" class="block text-base font-medium text-orange-600 bg-orange-50 px-3 py-2.5 rounded-lg transition-colors font-semibold">Wholesale &amp; Retail</a>
-            <a href="index.html#contact" class="block text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-3 py-2.5 rounded-lg transition-colors">Contact</a>
-            <a href="index.html#contact" class="block text-center bg-orange-600 hover:bg-orange-700 text-white font-medium py-2.5 rounded-lg text-sm transition-colors shadow-sm mt-4">
-                Get Prices &rarr;
-            </a>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white px-5 py-4 space-y-1 shadow-md">
+            <a href="about.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50">About</a>
+            <a href="index.html#categories" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50" data-close-menu>Products</a>
+            <a href="vendors.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50">Brands</a>
+            <a href="services.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50">Wholesale &amp; Retail</a>
+            <a href="index.html#faq" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50" data-close-menu>FAQ</a>
+            <a href="index.html#contact" class="block text-center mt-3 py-2.5 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 text-white font-medium" data-close-menu>Get Prices &rarr;</a>
         </div>
     </header>
 
@@ -170,7 +167,7 @@
     </main>
 
     <footer class="bg-[#0a1628] text-gray-400">
-        <div class="container mx-auto px-4 md:px-6 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-sm">
+        <div class="max-w-6xl mx-auto px-5 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-sm">
             <div>
                 <p class="text-white font-extrabold italic text-xl tracking-wide">BIZZ<span class="text-red-500">.</span><span class="text-orange-500">TECH</span></p>
                 <p class="mt-3 leading-relaxed">Electronics wholesale &amp; online store based in Lahore, supplying shops, resellers and customers across Pakistan.</p>
@@ -207,17 +204,14 @@
             </div>
         </div>
         <div class="border-t border-white/10">
-            <p class="container mx-auto px-4 md:px-6 py-5 text-xs text-gray-500">&copy; 2026 BIZZ.TECH, Lahore, Pakistan. All rights reserved. Brand names and logos belong to their respective owners.</p>
+            <p class="max-w-6xl mx-auto px-5 py-5 text-xs text-gray-500">&copy; 2026 BIZZ.TECH, Lahore, Pakistan. All rights reserved. Brand names and logos belong to their respective owners.</p>
         </div>
     </footer>
-<!-- MOBILE MENU INTERACTION SCRIPT -->
-    <script>
+<script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('[data-close-menu]').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
     </script>
     <script src="site.js" defer></script>
 </body>
