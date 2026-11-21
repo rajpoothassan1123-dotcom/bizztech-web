@@ -24,28 +24,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>body{font-family:'Geist',ui-sans-serif,system-ui,sans-serif}</style>
+    <style>html{scroll-behavior:smooth}body{font-family:'Geist',ui-sans-serif,system-ui,sans-serif}</style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        html { scroll-behavior: smooth; }
-    </style>
 </head>
 <body class="min-h-screen flex flex-col bg-white text-gray-900 font-sans antialiased">
 
-    <!-- HEADER -->
-    <header class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+    <header class="fixed top-0 inset-x-0 z-50 bg-white border-b border-gray-200">
         <div class="max-w-6xl mx-auto flex h-16 items-center justify-between px-5">
             <a href="index.html" class="text-xl font-extrabold italic tracking-wide" aria-label="BIZZ.TECH home">BIZZ<span class="text-red-500">.</span><span class="text-orange-600">TECH</span></a>
             <nav class="hidden lg:flex items-center gap-1 text-sm text-gray-600">
-                <a href="about.html" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">About</a>
-                <a href="index.html#categories" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">Products</a>
-                <a href="vendors.html" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">Brands</a>
-                <a href="services.html" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">Wholesale &amp; Retail</a>
-                <a href="index.html#faq" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">FAQ</a>
+                <a href="about.html" class="px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900">About</a>
+                <a href="index.html#categories" class="px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900">Products</a>
+                <a href="vendors.html" class="px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900">Brands</a>
+                <a href="services.html" class="px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900">Wholesale &amp; retail</a>
+                <a href="index.html#faq" class="px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900">FAQ</a>
             </nav>
             <div class="flex items-center gap-2">
-                <a href="index.html#contact" class="hidden md:inline-flex items-center gap-3 pl-5 pr-1.5 h-10 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 text-white text-sm font-medium shadow-[0_6px_20px_-6px_rgba(234,88,12,.7)] hover:brightness-105">
-                    Get Prices <span class="w-7 h-7 rounded-full bg-[#0a1628] grid place-items-center"><i class="fa-solid fa-arrow-right text-xs"></i></span>
+                <a href="index.html#contact" class="hidden md:inline-flex items-center gap-3 px-5 h-10 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-sm font-medium">
+                    Get prices
                 </a>
                 <button id="menu-btn" class="lg:hidden p-2 text-gray-700" aria-label="Toggle navigation menu"><i class="fa-solid fa-bars text-xl"></i></button>
             </div>
@@ -54,23 +50,19 @@
             <a href="about.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50">About</a>
             <a href="index.html#categories" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50" data-close-menu>Products</a>
             <a href="vendors.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50">Brands</a>
-            <a href="services.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50">Wholesale &amp; Retail</a>
+            <a href="services.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50">Wholesale &amp; retail</a>
             <a href="index.html#faq" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50" data-close-menu>FAQ</a>
-            <a href="index.html#contact" class="block text-center mt-3 py-2.5 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 text-white font-medium" data-close-menu>Get Prices &rarr;</a>
+            <a href="index.html#contact" class="block text-center mt-3 py-2.5 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-medium" data-close-menu>Get prices</a>
         </div>
     </header>
 
     <div class="h-16"></div>
 
     <main class="flex-1">
-        <section class="bg-gradient-to-b from-[#0a1628] to-[#1a2d4a] text-white py-20 relative overflow-hidden">
-            <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <section class="bg-[#0a1628] text-white py-20 relative overflow-hidden">
             <div class="container mx-auto px-4 md:px-6 relative z-10 text-center max-w-3xl">
-                <span class="text-sm font-semibold tracking-wide uppercase text-orange-400 mb-3 bg-orange-500/10 px-3 py-1 rounded-full inline-block">
-                    How We Work
-                </span>
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                    Wholesale &amp; Retail Electronics
+                    Wholesale and retail electronics
                 </h1>
                 <p class="text-gray-300 text-base md:text-lg leading-relaxed">
                     Whether you run a mobile shop or need a single phone, we make buying genuine electronics simple, with delivery anywhere in Pakistan.
@@ -85,28 +77,22 @@
                     <div class="p-8 md:p-10 rounded-2xl bg-[#0a1628] text-white relative overflow-hidden shadow-md flex flex-col justify-between">
                         <div class="absolute bottom-0 right-0 w-48 h-48 bg-orange-500/10 rounded-full translate-y-1/2 translate-x-1/2"></div>
                         <div class="relative">
-                            <div class="w-12 h-12 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center shrink-0 mb-6">
-                                <i class="fa-solid fa-user text-xl"></i>
-                            </div>
-                            <h2 class="text-2xl font-bold mb-4">For Individual Buyers</h2>
+                            <h2 class="text-2xl font-bold mb-4">For individual buyers</h2>
                             <p class="text-gray-400 leading-relaxed text-sm mb-6">
                                 Buy the phone, laptop or accessory you want at a fair price. Order online, pay the way that suits you, and get it delivered to your door.
                             </p>
                             <ul class="space-y-3 text-sm text-gray-300">
-                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-orange-400"></i> Cash on Delivery available</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-orange-400"></i> Cash on delivery available</li>
                                 <li class="flex items-center gap-3"><i class="fa-solid fa-check text-orange-400"></i> Every device checked before dispatch</li>
                                 <li class="flex items-center gap-3"><i class="fa-solid fa-check text-orange-400"></i> Delivery to every city in Pakistan</li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="p-8 md:p-10 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 text-white relative overflow-hidden shadow-md flex flex-col justify-between">
+                    <div class="p-8 md:p-10 rounded-2xl bg-orange-600 hover:bg-orange-700 text-white relative overflow-hidden shadow-md flex flex-col justify-between">
                         <div class="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
                         <div class="relative">
-                            <div class="w-12 h-12 rounded-xl bg-white/20 text-white flex items-center justify-center shrink-0 mb-6">
-                                <i class="fa-solid fa-shop text-xl"></i>
-                            </div>
-                            <h2 class="text-2xl font-bold mb-4">For Shops &amp; Resellers</h2>
+                            <h2 class="text-2xl font-bold mb-4">For shops and resellers</h2>
                             <p class="text-white/80 leading-relaxed text-sm mb-6">
                                 Keep your shelves stocked with popular models at wholesale rates. We share regular stock lists so you always know what's available and at what price.
                             </p>
@@ -125,37 +111,27 @@
         <section class="py-20 bg-gray-50 border-t border-gray-200/50">
             <div class="container mx-auto px-4 md:px-6">
                 <div class="text-center max-w-2xl mx-auto mb-16">
-                    <span class="text-sm font-semibold tracking-wide uppercase text-orange-600 mb-2 block">Why BIZZ.TECH</span>
-                    <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Simple, Reliable, Nationwide</h2>
+                    <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Simple, reliable, nationwide</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     
                     <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-truck-ramp-box text-xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">Nationwide Delivery</h3>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Nationwide delivery</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">
                             Orders are packed securely in Lahore and shipped by courier to any city in Pakistan, from Karachi to Peshawar.
                         </p>
                     </div>
 
                     <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-wallet text-xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">Easy Payments</h3>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Easy payments</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">
                             Pay by bank transfer, JazzCash, Easypaisa or cash on delivery, whichever works best for you.
                         </p>
                     </div>
 
                     <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-globe text-xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">Local &amp; Imported Stock</h3>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Local and imported stock</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">
                             We source from trusted suppliers in Pakistan and import directly, giving you a wide choice of models at competitive prices.
                         </p>
@@ -175,23 +151,23 @@
             <div>
                 <h4 class="text-white font-semibold mb-3">Company</h4>
                 <ul class="space-y-2">
-                    <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="about.html" class="hover:text-white transition-colors">About us</a></li>
                     <li><a href="vendors.html" class="hover:text-white transition-colors">Brands</a></li>
-                    <li><a href="services.html" class="hover:text-white transition-colors">Wholesale &amp; Retail</a></li>
+                    <li><a href="services.html" class="hover:text-white transition-colors">Wholesale &amp; retail</a></li>
                     <li><a href="index.html#contact" class="hover:text-white transition-colors">Contact</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-white font-semibold mb-3">We Accept</h4>
+                <h4 class="text-white font-semibold mb-3">We accept</h4>
                 <ul class="space-y-2">
-                    <li><i class="fa-solid fa-building-columns w-5 text-orange-500"></i> Bank Transfer</li>
-                    <li><i class="fa-solid fa-money-bill-wave w-5 text-orange-500"></i> Cash on Delivery</li>
+                    <li><i class="fa-solid fa-building-columns w-5 text-orange-500"></i> Bank transfer</li>
+                    <li><i class="fa-solid fa-money-bill-wave w-5 text-orange-500"></i> Cash on delivery</li>
                     <li><i class="fa-solid fa-mobile-screen w-5 text-orange-500"></i> JazzCash / Easypaisa</li>
-                    <li><i class="fa-solid fa-truck-fast w-5 text-orange-500"></i> Nationwide Delivery</li>
+                    <li><i class="fa-solid fa-truck-fast w-5 text-orange-500"></i> Nationwide delivery</li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-white font-semibold mb-3">Get in Touch</h4>
+                <h4 class="text-white font-semibold mb-3">Get in touch</h4>
                 <ul class="space-y-2">
                     <li><i class="fa-solid fa-location-dot w-5 text-orange-500"></i> Lahore, Pakistan</li>
                     <li><i class="fa-solid fa-envelope w-5 text-orange-500"></i> <a href="mailto:info@bizztech.online" class="hover:text-white">info@bizztech.online</a></li>
@@ -207,12 +183,6 @@
             <p class="max-w-6xl mx-auto px-5 py-5 text-xs text-gray-500">&copy; 2026 BIZZ.TECH, Lahore, Pakistan. All rights reserved. Brand names and logos belong to their respective owners.</p>
         </div>
     </footer>
-<script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        document.querySelectorAll('[data-close-menu]').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-    </script>
     <script src="site.js" defer></script>
 </body>
 </html>
