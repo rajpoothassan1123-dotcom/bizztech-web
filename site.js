@@ -95,3 +95,11 @@ if (qaForm) {
     if (q) document.getElementById('contact').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
   });
 }
+
+// "Ask for price" on product cards fills in the enquiry form
+document.querySelectorAll('.ask-price').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const msg = document.getElementById('f-msg');
+    if (msg) msg.value = `Please send me your price for the ${btn.dataset.product}. Quantity: `;
+  });
+});
