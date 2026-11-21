@@ -29,10 +29,7 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; }
         .font-accent { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; }
-
-        /* Hero light beams */
-        .hero-bg { background: linear-gradient(180deg, #ffffff 0%, #fff7f0 45%, #ffd9b8 80%, #fb923c 100%); }
-        .beam { position:absolute; top:0; bottom:0; background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.75) 55%, rgba(255,255,255,.15) 100%); filter: blur(2px); }
+        .hero-bg { background: #fff7f0; border-bottom: 1px solid #fde4cf; }
 
         /* Marquee */
         @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -50,9 +47,8 @@
             .reveal-words span { color: #0a1628; }
         }
 
-        /* Quick-answers panel */
-        .glass { background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03)); border: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(12px); }
-        .orb { background: radial-gradient(circle at 35% 30%, #fff7ed 0%, #fdba74 25%, #f97316 55%, #c2410c 100%); box-shadow: 0 0 60px 10px rgba(249,115,22,.45), inset 0 -10px 30px rgba(0,0,0,.25); }
+        /* Dark panels */
+        .glass { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.15); }
 
         /* Category art panels */
         .art { position: relative; overflow: hidden; background: #0b1020; }
@@ -67,7 +63,7 @@
         .art-acc .ball { position:absolute; border-radius:9999px; background: radial-gradient(circle at 30% 30%, #fff, #fde68a 30%, #fb923c 60%, #7c2d12 100%); filter: saturate(1.2); }
 
         /* Timeline */
-        .tl-dot { background: radial-gradient(circle at 35% 30%, #fed7aa, #f97316 60%, #c2410c); box-shadow: 0 0 18px rgba(249,115,22,.7); }
+        .tl-dot { background: #ea580c; border: 4px solid #0a1628; }
 
         details summary::-webkit-details-marker { display:none; }
         details[open] .faq-icon { transform: rotate(45deg); }
@@ -75,20 +71,19 @@
 </head>
 <body class="bg-white text-[#0a1628] antialiased">
 
-    <!-- HEADER -->
-    <header class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+    <header class="fixed top-0 inset-x-0 z-50 bg-white border-b border-gray-200">
         <div class="max-w-6xl mx-auto flex h-16 items-center justify-between px-5">
             <a href="index.html" class="text-xl font-extrabold italic tracking-wide" aria-label="BIZZ.TECH home">BIZZ<span class="text-red-500">.</span><span class="text-orange-600">TECH</span></a>
             <nav class="hidden lg:flex items-center gap-1 text-sm text-gray-600">
-                <a href="about.html" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">About</a>
-                <a href="#categories" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">Products</a>
-                <a href="vendors.html" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">Brands</a>
-                <a href="services.html" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">Wholesale &amp; Retail</a>
-                <a href="#faq" class="px-3 py-2 rounded-full hover:bg-gray-100 hover:text-gray-900">FAQ</a>
+                <a href="about.html" class="px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900">About</a>
+                <a href="#categories" class="px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900">Products</a>
+                <a href="vendors.html" class="px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900">Brands</a>
+                <a href="services.html" class="px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900">Wholesale &amp; retail</a>
+                <a href="#faq" class="px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900">FAQ</a>
             </nav>
             <div class="flex items-center gap-2">
-                <a href="#contact" class="hidden md:inline-flex items-center gap-3 pl-5 pr-1.5 h-10 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 text-white text-sm font-medium shadow-[0_6px_20px_-6px_rgba(234,88,12,.7)] hover:brightness-105">
-                    Get Prices <span class="w-7 h-7 rounded-full bg-[#0a1628] grid place-items-center"><i class="fa-solid fa-arrow-right text-xs"></i></span>
+                <a href="#contact" class="hidden md:inline-flex items-center gap-3 px-5 h-10 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-sm font-medium">
+                    Get prices
                 </a>
                 <button id="menu-btn" class="lg:hidden p-2 text-gray-700" aria-label="Toggle navigation menu"><i class="fa-solid fa-bars text-xl"></i></button>
             </div>
@@ -97,52 +92,44 @@
             <a href="about.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50">About</a>
             <a href="#categories" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50" data-close-menu>Products</a>
             <a href="vendors.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50">Brands</a>
-            <a href="services.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50">Wholesale &amp; Retail</a>
+            <a href="services.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50">Wholesale &amp; retail</a>
             <a href="#faq" class="block px-3 py-2.5 rounded-lg hover:bg-gray-50" data-close-menu>FAQ</a>
-            <a href="#contact" class="block text-center mt-3 py-2.5 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 text-white font-medium" data-close-menu>Get Prices &rarr;</a>
+            <a href="#contact" class="block text-center mt-3 py-2.5 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-medium" data-close-menu>Get prices</a>
         </div>
     </header>
 
     <main>
-        <!-- HERO -->
         <section class="hero-bg relative overflow-hidden pt-36 pb-28 md:pt-44 md:pb-36">
-            <div class="beam left-[22%] w-[7%]"></div>
-            <div class="beam left-[38%] w-[10%] opacity-80"></div>
-            <div class="beam left-[56%] w-[6%] opacity-70"></div>
-            <div class="beam left-[70%] w-[12%] opacity-90"></div>
-            <div class="beam left-[88%] w-[5%] opacity-60"></div>
             <div class="relative max-w-6xl mx-auto px-5">
                 <span class="inline-flex items-center gap-2 text-xs bg-white/80 border border-gray-200 rounded-md px-2.5 py-1 text-gray-600">
-                    <i class="fa-solid fa-bolt text-orange-500"></i> Electronics distributor in <strong class="text-gray-900">Lahore, Pakistan</strong>
+                    Electronics distributor in <strong class="text-gray-900">Lahore, Pakistan</strong>
                 </span>
                 <h1 class="mt-5 text-[2.6rem] leading-[1.05] sm:text-6xl md:text-[4.2rem] font-medium tracking-tight max-w-4xl">
-                    Genuine Electronics, Wholesale &amp; Retail, Delivered <span class="font-accent text-orange-600">Nationwide</span>
+                    Genuine electronics, wholesale &amp; retail, delivered <span class="font-accent text-orange-600">nationwide</span>
                 </h1>
                 <p class="mt-6 text-gray-600 max-w-xl leading-relaxed">
                     Smartphones, laptops, audio and accessories for shops, resellers and customers across Pakistan, sourced locally and imported.
                 </p>
                 <p class="mt-3 text-sm text-gray-500 italic">Shop owner? Ask for our <strong class="text-gray-800 not-italic">wholesale price list</strong>.</p>
                 <div class="mt-8 flex flex-wrap items-center gap-5">
-                    <a href="#contact" class="inline-flex items-center gap-3 pl-6 pr-1.5 h-12 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 text-white font-medium shadow-[0_10px_30px_-10px_rgba(234,88,12,.8)] hover:brightness-105">
-                        Get Wholesale Prices <span class="w-9 h-9 rounded-full bg-[#0a1628] grid place-items-center"><i class="fa-solid fa-arrow-right text-sm"></i></span>
+                    <a href="#contact" class="inline-flex items-center gap-3 px-6 h-12 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-medium">
+                        Get wholesale prices
                     </a>
-                    <a href="#categories" class="text-sm font-medium text-gray-800 hover:text-orange-700">Browse Products &rarr;</a>
+                    <a href="#categories" class="text-sm font-medium text-gray-800 hover:text-orange-700">Browse products</a>
                 </div>
             </div>
         </section>
 
-        <!-- BRAND STRIP -->
         <section class="py-16 md:py-20 text-center">
             <p class="max-w-3xl mx-auto px-5 text-lg md:text-2xl text-gray-700 leading-snug">
                 Supplying <strong class="text-gray-900">shops</strong>, <strong class="text-gray-900">resellers</strong> and <strong class="text-gray-900">customers</strong> across Pakistan with the brands people actually ask for.
             </p>
             <div class="mt-12 border-y border-gray-100 py-8 overflow-hidden marquee-mask">
                 <div class="marquee-track gap-16 text-2xl md:text-3xl font-semibold text-gray-400">
-                    <!-- set 1 -->
                     <span class="flex items-center gap-16 pr-16">
                         <span><i class="fa-brands fa-apple"></i> Apple</span><span class="tracking-[.2em]">SAMSUNG</span><span><i class="fa-brands fa-google"></i> Pixel</span><span class="tracking-widest">SONY</span><span>iPhone</span><span>Galaxy</span><span>AirPods</span><span>iPad</span>
                     </span>
-                    <!-- set 2 (duplicate for seamless loop) -->
+                    <!-- Second copy so the scroll loops without a gap -->
                     <span class="flex items-center gap-16 pr-16" aria-hidden="true">
                         <span><i class="fa-brands fa-apple"></i> Apple</span><span class="tracking-[.2em]">SAMSUNG</span><span><i class="fa-brands fa-google"></i> Pixel</span><span class="tracking-widest">SONY</span><span>iPhone</span><span>Galaxy</span><span>AirPods</span><span>iPad</span>
                     </span>
@@ -150,7 +137,6 @@
             </div>
         </section>
 
-        <!-- STATEMENT + FACTS -->
         <section class="pb-24 md:pb-28">
             <p class="reveal-words max-w-4xl mx-auto px-5 text-center text-2xl md:text-[2.4rem] leading-snug tracking-tight">
                 We make buying genuine electronics in Pakistan simple: honest stock, fair prices, flexible payment and delivery to your door or shop.
@@ -158,23 +144,20 @@
             <div class="max-w-5xl mx-auto px-5 mt-16 grid grid-cols-2 md:grid-cols-4 gap-y-10 text-center">
                 <div class="fade-up"><div class="text-4xl md:text-5xl font-light">4</div><div class="mt-2 text-xs text-gray-500">ways to pay, including<br>cash on delivery</div></div>
                 <div class="fade-up"><div class="text-4xl md:text-5xl font-light">All</div><div class="mt-2 text-xs text-gray-500">of Pakistan covered<br>by courier delivery</div></div>
-                <div class="fade-up"><div class="text-4xl md:text-5xl font-light">1&ndash;1000s</div><div class="mt-2 text-xs text-gray-500">units per order, retail<br>to wholesale</div></div>
+                <div class="fade-up"><div class="text-4xl md:text-5xl font-light">Any size</div><div class="mt-2 text-xs text-gray-500">from single units<br>to bulk orders</div></div>
                 <div class="fade-up"><div class="text-4xl md:text-5xl font-light">2</div><div class="mt-2 text-xs text-gray-500">sourcing channels,<br>local &amp; imported</div></div>
             </div>
         </section>
 
-        <!-- QUICK ANSWERS -->
         <section class="bg-[#0a1628] text-white py-20 md:py-24 relative overflow-hidden">
-            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(234,88,12,.35),transparent_60%)]"></div>
             <div class="relative max-w-6xl mx-auto px-5">
                 <div class="grid md:grid-cols-2 gap-8 items-end">
-                    <h2 class="text-3xl md:text-[2.6rem] leading-tight font-medium tracking-tight">Have a question?<br>Get an instant answer.</h2>
+                    <h2 class="text-3xl md:text-[2.6rem] leading-tight font-medium tracking-tight">Have a question?<br>Get a quick answer.</h2>
                     <p class="text-sm text-gray-300 max-w-sm md:justify-self-end">Tap a common question below for a quick answer. For anything else, type your question and we'll reply with details and prices.</p>
                 </div>
                 <div class="glass rounded-2xl mt-10 p-5 md:p-8">
                     <div class="flex flex-col items-center text-center py-6 md:py-10">
-                        <div class="orb w-20 h-20 md:w-24 md:h-24 rounded-full grid place-items-center"><i class="fa-solid fa-wand-magic-sparkles text-white text-2xl"></i></div>
-                        <p id="qa-answer" class="mt-8 max-w-2xl text-gray-200 leading-relaxed min-h-[3.5rem]" aria-live="polite">Choose a question to see the answer here.</p>
+                        <p id="qa-answer" class="max-w-2xl text-gray-200 leading-relaxed min-h-[3.5rem]" aria-live="polite">Choose a question to see the answer.</p>
                     </div>
                     <div class="flex flex-wrap gap-2 mb-3">
                         <button type="button" class="qa-chip text-xs md:text-sm px-3 py-2 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10" data-answer="Both. Shops and resellers get wholesale rates on bulk orders, and individual customers can buy single units at retail prices.">Do you sell single units or only wholesale?</button>
@@ -185,31 +168,29 @@
                     <form id="qa-form" class="flex items-center gap-2 rounded-xl border border-white/25 bg-white/10 p-1.5 pl-4">
                         <label for="qa-input" class="sr-only">Ask your question</label>
                         <input id="qa-input" type="text" placeholder="Ask anything, e.g. price of iPhone 15 128GB…" class="flex-1 bg-transparent text-sm placeholder-gray-400 focus:outline-none">
-                        <button type="submit" class="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-400 to-orange-600 grid place-items-center" aria-label="Send question"><i class="fa-solid fa-paper-plane text-sm"></i></button>
+                        <button type="submit" class="w-10 h-10 rounded-lg bg-orange-600 hover:bg-orange-700 grid place-items-center" aria-label="Send question"><i class="fa-solid fa-paper-plane text-sm"></i></button>
                     </form>
                 </div>
             </div>
         </section>
 
-        <!-- CATEGORIES -->
         <section id="categories" class="bg-gray-50 py-24 md:py-28 scroll-mt-16">
             <div class="max-w-6xl mx-auto px-5">
                 <div class="text-center max-w-2xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-[2.6rem] leading-tight font-medium tracking-tight">Electronics for Every Shop &amp; Buyer</h2>
+                    <h2 class="text-3xl md:text-[2.6rem] leading-tight font-medium tracking-tight">Electronics for every shop and buyer</h2>
                     <p class="mt-4 text-sm text-gray-500">Popular models in stock or available to order. Ask for current availability and prices.</p>
                 </div>
 
                 <div class="space-y-14">
-                    <!-- Smartphones -->
-                    <article class="fade-up grid md:grid-cols-2 bg-white rounded-xl shadow-[0_20px_50px_-20px_rgba(10,22,40,.25)] overflow-hidden">
+                    <article class="fade-up grid md:grid-cols-2 bg-white rounded-xl border border-gray-200 overflow-hidden">
                         <div class="p-6 md:p-8">
                             <h3 class="text-2xl font-medium">Smartphones</h3>
                             <p class="mt-2 text-sm text-gray-500">The latest and most popular models from Apple, Samsung and Google.</p>
                             <ul class="mt-6 divide-y divide-gray-100 text-sm">
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">iPhone <span>&rarr;</span></a></li>
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Samsung Galaxy S &amp; A series <span>&rarr;</span></a></li>
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Galaxy foldables <span>&rarr;</span></a></li>
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Google Pixel <span>&rarr;</span></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">iPhone <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Samsung Galaxy S &amp; A series <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Galaxy foldables <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Google Pixel <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                         <div class="art art-phones min-h-[240px]" aria-hidden="true">
@@ -219,16 +200,15 @@
                         </div>
                     </article>
 
-                    <!-- Laptops & Tablets -->
-                    <article class="fade-up grid md:grid-cols-2 bg-white rounded-xl shadow-[0_20px_50px_-20px_rgba(10,22,40,.25)] overflow-hidden">
+                    <article class="fade-up grid md:grid-cols-2 bg-white rounded-xl border border-gray-200 overflow-hidden">
                         <div class="p-6 md:p-8">
-                            <h3 class="text-2xl font-medium">Laptops &amp; Tablets</h3>
+                            <h3 class="text-2xl font-medium">Laptops &amp; tablets</h3>
                             <p class="mt-2 text-sm text-gray-500">For work, study and business, from everyday machines to premium models.</p>
                             <ul class="mt-6 divide-y divide-gray-100 text-sm">
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">MacBook <span>&rarr;</span></a></li>
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">iPad <span>&rarr;</span></a></li>
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Galaxy Tab <span>&rarr;</span></a></li>
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Windows laptops <span>&rarr;</span></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">MacBook <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">iPad <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Galaxy Tab <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Windows laptops <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                         <div class="art art-laptops min-h-[240px]" aria-hidden="true">
@@ -238,16 +218,15 @@
                         </div>
                     </article>
 
-                    <!-- Audio & Wearables -->
-                    <article class="fade-up grid md:grid-cols-2 bg-white rounded-xl shadow-[0_20px_50px_-20px_rgba(10,22,40,.25)] overflow-hidden">
+                    <article class="fade-up grid md:grid-cols-2 bg-white rounded-xl border border-gray-200 overflow-hidden">
                         <div class="p-6 md:p-8">
-                            <h3 class="text-2xl font-medium">Audio &amp; Wearables</h3>
+                            <h3 class="text-2xl font-medium">Audio &amp; wearables</h3>
                             <p class="mt-2 text-sm text-gray-500">Earbuds, headphones and smartwatches from the brands customers trust.</p>
                             <ul class="mt-6 divide-y divide-gray-100 text-sm">
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">AirPods <span>&rarr;</span></a></li>
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Galaxy Buds &amp; Watch <span>&rarr;</span></a></li>
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Sony headphones <span>&rarr;</span></a></li>
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Apple Watch <span>&rarr;</span></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">AirPods <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Galaxy Buds &amp; Watch <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Sony headphones <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Apple Watch <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                         <div class="art art-audio min-h-[240px]" aria-hidden="true">
@@ -258,16 +237,15 @@
                         </div>
                     </article>
 
-                    <!-- Accessories -->
-                    <article class="fade-up grid md:grid-cols-2 bg-white rounded-xl shadow-[0_20px_50px_-20px_rgba(10,22,40,.25)] overflow-hidden">
+                    <article class="fade-up grid md:grid-cols-2 bg-white rounded-xl border border-gray-200 overflow-hidden">
                         <div class="p-6 md:p-8">
                             <h3 class="text-2xl font-medium">Accessories</h3>
                             <p class="mt-2 text-sm text-gray-500">Fast-moving add-ons that every mobile shop needs on the shelf.</p>
                             <ul class="mt-6 divide-y divide-gray-100 text-sm">
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Chargers &amp; cables <span>&rarr;</span></a></li>
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Power banks <span>&rarr;</span></a></li>
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Cases &amp; screen protection <span>&rarr;</span></a></li>
-                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Smart home devices <span>&rarr;</span></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Chargers &amp; cables <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Power banks <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Cases &amp; screen protection <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
+                                <li><a href="#contact" class="flex justify-between py-2.5 hover:text-orange-700">Smart home devices <i class="fa-solid fa-chevron-right text-[10px] text-gray-400 self-center" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                         <div class="art art-acc min-h-[240px]" aria-hidden="true">
@@ -279,12 +257,10 @@
             </div>
         </section>
 
-        <!-- HOW ORDERING WORKS -->
-        <section class="bg-gradient-to-b from-[#0a1628] to-[#13284a] text-white py-24 md:py-28 relative overflow-hidden">
-            <div class="absolute inset-0 opacity-30 bg-[linear-gradient(90deg,transparent_0_10%,rgba(255,255,255,.04)_10%_20%,transparent_20%_45%,rgba(255,255,255,.05)_45%_58%,transparent_58%_80%,rgba(255,255,255,.04)_80%_90%,transparent_90%)]"></div>
+        <section class="bg-[#0a1628] text-white py-24 md:py-28 relative overflow-hidden">
             <div class="relative max-w-5xl mx-auto px-5">
                 <div class="text-center max-w-xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-[2.6rem] font-medium tracking-tight">How Ordering Works</h2>
+                    <h2 class="text-3xl md:text-[2.6rem] font-medium tracking-tight">How ordering works</h2>
                     <p class="mt-4 text-sm text-gray-300">From your first message to delivery, in five simple steps.</p>
                 </div>
                 <ol class="relative">
@@ -292,93 +268,89 @@
                     <li class="fade-up relative grid md:grid-cols-2 gap-4 pl-14 md:pl-0 pb-14">
                         <div class="hidden md:flex justify-end pr-12"><span class="w-11 h-11 rounded-lg border border-white/25 bg-white/5 grid place-items-center"><i class="fa-solid fa-message"></i></span></div>
                         <span class="tl-dot absolute left-5 md:left-1/2 top-1 w-7 h-7 -translate-x-1/2 rounded-full"></span>
-                        <div class="md:pl-12"><h3 class="text-xl font-medium">Send Your Enquiry</h3><p class="text-sm text-gray-300 mt-1">Tell us the models and quantities you need.</p></div>
+                        <div class="md:pl-12"><h3 class="text-xl font-medium">Send your enquiry</h3><p class="text-sm text-gray-300 mt-1">Tell us the models and quantities you need.</p></div>
                     </li>
                     <li class="fade-up relative grid md:grid-cols-2 gap-4 pl-14 md:pl-0 pb-14">
-                        <div class="md:text-right md:pr-12 order-2 md:order-1"><h3 class="text-xl font-medium">Get Your Quote</h3><p class="text-sm text-gray-300 mt-1">We reply with current stock, prices and warranty terms.</p></div>
+                        <div class="md:text-right md:pr-12 order-2 md:order-1"><h3 class="text-xl font-medium">Get your quote</h3><p class="text-sm text-gray-300 mt-1">We reply with current stock, prices and warranty terms.</p></div>
                         <span class="tl-dot absolute left-5 md:left-1/2 top-1 w-7 h-7 -translate-x-1/2 rounded-full"></span>
                         <div class="hidden md:flex md:order-2 pl-12"><span class="w-11 h-11 rounded-lg border border-white/25 bg-white/5 grid place-items-center"><i class="fa-solid fa-file-invoice-dollar"></i></span></div>
                     </li>
                     <li class="fade-up relative grid md:grid-cols-2 gap-4 pl-14 md:pl-0 pb-14">
                         <div class="hidden md:flex justify-end pr-12"><span class="w-11 h-11 rounded-lg border border-white/25 bg-white/5 grid place-items-center"><i class="fa-solid fa-handshake"></i></span></div>
                         <span class="tl-dot absolute left-5 md:left-1/2 top-1 w-7 h-7 -translate-x-1/2 rounded-full"></span>
-                        <div class="md:pl-12"><h3 class="text-xl font-medium">Confirm &amp; Pay</h3><p class="text-sm text-gray-300 mt-1">Bank transfer, JazzCash, Easypaisa or cash on delivery.</p></div>
+                        <div class="md:pl-12"><h3 class="text-xl font-medium">Confirm and pay</h3><p class="text-sm text-gray-300 mt-1">Bank transfer, JazzCash, Easypaisa or cash on delivery.</p></div>
                     </li>
                     <li class="fade-up relative grid md:grid-cols-2 gap-4 pl-14 md:pl-0 pb-14">
-                        <div class="md:text-right md:pr-12 order-2 md:order-1"><h3 class="text-xl font-medium">Checked &amp; Packed</h3><p class="text-sm text-gray-300 mt-1">Your order is checked and securely packed in Lahore.</p></div>
+                        <div class="md:text-right md:pr-12 order-2 md:order-1"><h3 class="text-xl font-medium">Checked and packed</h3><p class="text-sm text-gray-300 mt-1">Your order is checked and securely packed in Lahore.</p></div>
                         <span class="tl-dot absolute left-5 md:left-1/2 top-1 w-7 h-7 -translate-x-1/2 rounded-full"></span>
                         <div class="hidden md:flex md:order-2 pl-12"><span class="w-11 h-11 rounded-lg border border-white/25 bg-white/5 grid place-items-center"><i class="fa-solid fa-box"></i></span></div>
                     </li>
                     <li class="fade-up relative grid md:grid-cols-2 gap-4 pl-14 md:pl-0">
                         <div class="hidden md:flex justify-end pr-12"><span class="w-11 h-11 rounded-lg border border-white/25 bg-white/5 grid place-items-center"><i class="fa-solid fa-truck-fast"></i></span></div>
                         <span class="tl-dot absolute left-5 md:left-1/2 top-1 w-7 h-7 -translate-x-1/2 rounded-full"></span>
-                        <div class="md:pl-12"><h3 class="text-xl font-medium">Delivered to You</h3><p class="text-sm text-gray-300 mt-1">Sent by courier to your door or shop, anywhere in Pakistan.</p></div>
+                        <div class="md:pl-12"><h3 class="text-xl font-medium">Delivered to you</h3><p class="text-sm text-gray-300 mt-1">Sent by courier to your door or shop, anywhere in Pakistan.</p></div>
                     </li>
                 </ol>
             </div>
         </section>
 
-        <!-- PAY YOUR WAY STRIP -->
         <section class="py-20 text-center">
-            <h2 class="text-3xl md:text-[2.4rem] font-medium tracking-tight">Pay the Way You Prefer</h2>
+            <h2 class="text-3xl md:text-[2.4rem] font-medium tracking-tight">Pay the way you prefer</h2>
             <p class="mt-3 text-sm text-gray-500">Flexible options for shops and individual buyers.</p>
             <div class="mt-10 flex flex-wrap justify-center gap-3 px-5">
-                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-200 text-sm"><i class="fa-solid fa-building-columns text-orange-600"></i> Bank Transfer</span>
-                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-200 text-sm"><i class="fa-solid fa-money-bill-wave text-green-600"></i> Cash on Delivery</span>
+                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-200 text-sm"><i class="fa-solid fa-building-columns text-orange-600"></i> Bank transfer</span>
+                <span class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-200 text-sm"><i class="fa-solid fa-money-bill-wave text-green-600"></i> Cash on delivery</span>
                 <span class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-200 text-sm"><i class="fa-solid fa-mobile-screen text-red-600"></i> JazzCash</span>
                 <span class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-200 text-sm"><i class="fa-solid fa-mobile-screen-button text-emerald-600"></i> Easypaisa</span>
             </div>
         </section>
 
-        <!-- WHY BIZZ.TECH -->
         <section class="pb-24 md:pb-28">
             <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
                 <div class="fade-up art rounded-2xl min-h-[340px] md:min-h-[460px]" aria-hidden="true">
                     <div class="absolute inset-0 bg-[radial-gradient(circle_at_40%_45%,rgba(249,115,22,.75),transparent_45%),radial-gradient(circle_at_65%_65%,rgba(124,58,237,.6),transparent_45%)]"></div>
-                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-72 rounded-[2.2rem] border-2 border-white/60 bg-white/10 backdrop-blur-sm rotate-12"></div>
+                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-72 rounded-[2.2rem] border-2 border-white/60 bg-white/10 rotate-12"></div>
                     <div class="absolute left-[30%] top-[30%] w-40 h-72 rounded-[2.2rem] border-2 border-white/30 -rotate-6"></div>
                 </div>
                 <div>
-                    <h2 class="text-3xl md:text-[2.6rem] leading-tight font-medium tracking-tight">Why Shops &amp; Buyers Choose BIZZ.TECH</h2>
+                    <h2 class="text-3xl md:text-[2.6rem] leading-tight font-medium tracking-tight">Why shops and buyers choose BIZZ.TECH</h2>
                     <p class="mt-4 text-sm text-gray-500">A supplier you can rely on, whether you're buying one phone or restocking a shop.</p>
                     <dl class="mt-8 space-y-6 text-sm">
-                        <div><dt class="font-semibold">Honest Stock</dt><dd class="text-gray-500 mt-1">Clear product descriptions and condition. What we quote is what you get.</dd></div>
-                        <div><dt class="font-semibold">Competitive Prices</dt><dd class="text-gray-500 mt-1">Local and imported sourcing lets us offer good rates, with better pricing on bulk orders.</dd></div>
-                        <div><dt class="font-semibold">Regular Stock Updates</dt><dd class="text-gray-500 mt-1">Shop owners get our latest stock and price lists so they always know what's available.</dd></div>
-                        <div><dt class="font-semibold">Support After the Sale</dt><dd class="text-gray-500 mt-1">If something isn't right, contact us and we'll sort it out.</dd></div>
+                        <div><dt class="font-semibold">Honest stock</dt><dd class="text-gray-500 mt-1">Clear product descriptions and condition. What we quote is what you get.</dd></div>
+                        <div><dt class="font-semibold">Competitive prices</dt><dd class="text-gray-500 mt-1">Local and imported sourcing lets us offer good rates, with better pricing on bulk orders.</dd></div>
+                        <div><dt class="font-semibold">Regular stock updates</dt><dd class="text-gray-500 mt-1">Shop owners get our latest stock and price lists so they always know what's available.</dd></div>
+                        <div><dt class="font-semibold">Support after the sale</dt><dd class="text-gray-500 mt-1">If something isn't right, contact us and we'll sort it out.</dd></div>
                     </dl>
                     <div class="mt-8 flex flex-wrap gap-3">
-                        <a href="about.html" class="px-5 py-2.5 rounded-full border border-gray-300 text-sm hover:bg-gray-50">About Us</a>
-                        <a href="#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 text-white text-sm">Get Prices</a>
+                        <a href="about.html" class="px-5 py-2.5 rounded-lg border border-gray-300 text-sm hover:bg-gray-50">About us</a>
+                        <a href="#contact" class="px-5 py-2.5 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-sm">Get prices</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- WHO WE SERVE -->
         <section class="bg-gray-50 py-24 md:py-28">
             <div class="max-w-6xl mx-auto px-5">
                 <div class="text-center max-w-2xl mx-auto mb-14">
-                    <h2 class="text-3xl md:text-[2.6rem] font-medium tracking-tight">Who We Serve</h2>
+                    <h2 class="text-3xl md:text-[2.6rem] font-medium tracking-tight">Who we serve</h2>
                     <p class="mt-4 text-sm text-gray-500">From mobile markets to offices and homes across Pakistan.</p>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <div class="fade-up bg-white rounded-xl p-6 border border-gray-100"><span class="w-10 h-10 rounded-lg bg-orange-50 text-orange-600 grid place-items-center"><i class="fa-solid fa-store"></i></span><h3 class="mt-4 font-medium">Mobile &amp; Electronics Shops</h3><p class="mt-1 text-sm text-gray-500">Wholesale stock at bulk rates to keep your shelves full.</p></div>
-                    <div class="fade-up bg-white rounded-xl p-6 border border-gray-100"><span class="w-10 h-10 rounded-lg bg-orange-50 text-orange-600 grid place-items-center"><i class="fa-solid fa-people-arrows"></i></span><h3 class="mt-4 font-medium">Resellers &amp; Traders</h3><p class="mt-1 text-sm text-gray-500">Reliable supply of popular models for your own customers.</p></div>
-                    <div class="fade-up bg-white rounded-xl p-6 border border-gray-100"><span class="w-10 h-10 rounded-lg bg-orange-50 text-orange-600 grid place-items-center"><i class="fa-solid fa-cart-shopping"></i></span><h3 class="mt-4 font-medium">Online Sellers</h3><p class="mt-1 text-sm text-gray-500">Stock for your online store or social media shop.</p></div>
-                    <div class="fade-up bg-white rounded-xl p-6 border border-gray-100"><span class="w-10 h-10 rounded-lg bg-orange-50 text-orange-600 grid place-items-center"><i class="fa-solid fa-building"></i></span><h3 class="mt-4 font-medium">Offices &amp; Businesses</h3><p class="mt-1 text-sm text-gray-500">Phones and laptops for your team, in one order.</p></div>
-                    <div class="fade-up bg-white rounded-xl p-6 border border-gray-100"><span class="w-10 h-10 rounded-lg bg-orange-50 text-orange-600 grid place-items-center"><i class="fa-solid fa-user"></i></span><h3 class="mt-4 font-medium">Individual Buyers</h3><p class="mt-1 text-sm text-gray-500">Buy a single device at a fair price, delivered to your door.</p></div>
-                    <div class="fade-up bg-white rounded-xl p-6 border border-gray-100"><span class="w-10 h-10 rounded-lg bg-orange-50 text-orange-600 grid place-items-center"><i class="fa-solid fa-graduation-cap"></i></span><h3 class="mt-4 font-medium">Students</h3><p class="mt-1 text-sm text-gray-500">Laptops and tablets for study at sensible prices.</p></div>
+                    <div class="fade-up bg-white rounded-xl p-6 border border-gray-100"><h3 class="font-medium">Mobile and electronics shops</h3><p class="mt-1 text-sm text-gray-500">Wholesale stock at bulk rates to keep your shelves full.</p></div>
+                    <div class="fade-up bg-white rounded-xl p-6 border border-gray-100"><h3 class="font-medium">Resellers and traders</h3><p class="mt-1 text-sm text-gray-500">Reliable supply of popular models for your own customers.</p></div>
+                    <div class="fade-up bg-white rounded-xl p-6 border border-gray-100"><h3 class="font-medium">Online sellers</h3><p class="mt-1 text-sm text-gray-500">Stock for your online store or social media shop.</p></div>
+                    <div class="fade-up bg-white rounded-xl p-6 border border-gray-100"><h3 class="font-medium">Offices and businesses</h3><p class="mt-1 text-sm text-gray-500">Phones and laptops for your team, in one order.</p></div>
+                    <div class="fade-up bg-white rounded-xl p-6 border border-gray-100"><h3 class="font-medium">Individual buyers</h3><p class="mt-1 text-sm text-gray-500">Buy a single device at a fair price, delivered to your door.</p></div>
+                    <div class="fade-up bg-white rounded-xl p-6 border border-gray-100"><h3 class="font-medium">Students</h3><p class="mt-1 text-sm text-gray-500">Laptops and tablets for study at sensible prices.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ -->
         <section id="faq" class="py-24 md:py-28 scroll-mt-16">
             <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-[1fr_1.6fr] gap-10">
                 <div>
-                    <h2 class="text-3xl md:text-[2.6rem] leading-tight font-medium tracking-tight">Frequently Asked Questions</h2>
-                    <a href="#contact" class="mt-6 inline-flex items-center gap-3 pl-5 pr-1.5 h-10 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 text-white text-sm font-medium">Ask Us <span class="w-7 h-7 rounded-full bg-[#0a1628] grid place-items-center"><i class="fa-solid fa-arrow-right text-xs"></i></span></a>
+                    <h2 class="text-3xl md:text-[2.6rem] leading-tight font-medium tracking-tight">Frequently asked questions</h2>
+                    <a href="#contact" class="mt-6 inline-flex items-center gap-3 px-5 h-10 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-sm font-medium">Ask us</a>
                 </div>
                 <div class="divide-y divide-gray-200 border-y border-gray-200">
                     <details class="group py-5"><summary class="flex justify-between items-center cursor-pointer font-medium">Do you sell to individual customers or only to shops? <i class="faq-icon fa-solid fa-plus text-gray-400 transition-transform"></i></summary><p class="mt-3 text-sm text-gray-500">Both. Shops and resellers get wholesale pricing on bulk orders, and individual customers can buy single units.</p></details>
@@ -391,23 +363,20 @@
             </div>
         </section>
 
-        <!-- CTA BAND -->
         <section class="relative overflow-hidden bg-[#0a1628] text-white">
-            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_85%_50%,rgba(249,115,22,.55),transparent_55%)]"></div>
             <div class="relative max-w-6xl mx-auto px-5 py-20 md:py-24 grid md:grid-cols-2 gap-10 items-center">
                 <div>
-                    <span class="text-xs bg-white/10 border border-white/15 rounded px-2.5 py-1">Stock updates</span>
-                    <h2 class="mt-5 text-3xl md:text-5xl leading-tight font-medium tracking-tight">Ready to stock up, or need just one?</h2>
+                    <h2 class="text-3xl md:text-5xl leading-tight font-medium tracking-tight">Ready to stock up, or need just one?</h2>
                     <p class="mt-4 text-gray-300 text-sm max-w-md">Get prices for the models you need, or subscribe for new arrivals, price drops and wholesale deals.</p>
                     <div class="mt-7 flex flex-wrap items-center gap-5">
-                        <a href="#contact" class="inline-flex items-center gap-3 pl-6 pr-1.5 h-12 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 font-medium">Get Prices <span class="w-9 h-9 rounded-full bg-[#0a1628] grid place-items-center"><i class="fa-solid fa-arrow-right text-sm"></i></span></a>
-                        <a href="vendors.html" class="text-sm text-gray-200 hover:text-white">See Brands &rarr;</a>
+                        <a href="#contact" class="inline-flex items-center gap-3 px-6 h-12 rounded-lg bg-orange-600 hover:bg-orange-700 font-medium">Get prices</a>
+                        <a href="vendors.html" class="text-sm text-gray-200 hover:text-white">See brands</a>
                     </div>
                 </div>
                 <div class="glass rounded-2xl p-6">
-                    <h3 class="font-medium">Get New Stock &amp; Price Updates</h3>
+                    <h3 class="font-medium">Get new stock and price updates</h3>
                     <p class="text-xs text-gray-400 mt-1">No spam. Unsubscribe anytime.</p>
-                    <form action="https://api.web3forms.com/submit" method="POST" class="mt-4 flex flex-col sm:flex-row gap-2" data-web3form data-success="You're subscribed! We'll send stock updates to your inbox.">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="mt-4 flex flex-col sm:flex-row gap-2" data-web3form data-success="You're subscribed. We'll send stock updates to your inbox.">
                         <input type="hidden" name="access_key" value="5e5f5ae2-fb6b-4bd3-b63f-57c414446126">
                         <input type="hidden" name="subject" value="New Newsletter Subscriber - bizztech.online">
                         <input type="hidden" name="from_name" value="BIZZ.TECH Website">
@@ -420,11 +389,10 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
         <section id="contact" class="py-24 md:py-28 bg-gray-50 scroll-mt-16">
             <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-[1fr_1.4fr] gap-12">
                 <div>
-                    <h2 class="text-3xl md:text-[2.6rem] leading-tight font-medium tracking-tight">Get Prices &amp; Place Orders</h2>
+                    <h2 class="text-3xl md:text-[2.6rem] leading-tight font-medium tracking-tight">Get prices and place orders</h2>
                     <p class="mt-4 text-sm text-gray-500 max-w-sm">Tell us what you're looking for and we'll reply with current stock and prices. Shop owners: ask for our wholesale price list.</p>
                     <ul class="mt-8 space-y-4 text-sm">
                         <li class="flex items-center gap-3"><span class="w-10 h-10 rounded-lg bg-white border border-gray-200 grid place-items-center text-orange-600"><i class="fa-solid fa-location-dot"></i></span> Lahore, Pakistan</li>
@@ -434,24 +402,24 @@
                     </ul>
                 </div>
                 <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 shadow-sm">
-                    <form action="https://api.web3forms.com/submit" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-5" data-web3form data-success="Thank you! We've received your enquiry and will reply with prices shortly.">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-5" data-web3form data-success="Thank you. We've received your enquiry and will reply with prices shortly.">
                         <input type="hidden" name="access_key" value="5e5f5ae2-fb6b-4bd3-b63f-57c414446126">
                         <input type="hidden" name="subject" value="New Enquiry - bizztech.online">
                         <input type="hidden" name="from_name" value="BIZZ.TECH Website">
                         <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
-                        <div><label for="f-name" class="block text-xs font-semibold uppercase text-gray-500 mb-2">Full Name</label><input id="f-name" type="text" name="name" required placeholder="Your name" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-orange-500 text-sm"></div>
-                        <div><label for="f-email" class="block text-xs font-semibold uppercase text-gray-500 mb-2">Email</label><input id="f-email" type="email" name="email" required placeholder="you@example.com" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-orange-500 text-sm"></div>
-                        <div class="md:col-span-2"><label for="f-type" class="block text-xs font-semibold uppercase text-gray-500 mb-2">I am a</label>
+                        <div><label for="f-name" class="block text-sm font-medium text-gray-700 mb-2">Full name</label><input id="f-name" type="text" name="name" required placeholder="Your name" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-orange-500 text-sm"></div>
+                        <div><label for="f-email" class="block text-sm font-medium text-gray-700 mb-2">Email</label><input id="f-email" type="email" name="email" required placeholder="you@example.com" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-orange-500 text-sm"></div>
+                        <div class="md:col-span-2"><label for="f-type" class="block text-sm font-medium text-gray-700 mb-2">I am a</label>
                             <select id="f-type" name="buyer_type" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-orange-500 text-sm bg-white">
                                 <option value="">Select one…</option>
                                 <option>Shop owner / Reseller (wholesale)</option>
                                 <option>Individual buyer (retail)</option>
                                 <option>Supplier</option>
                             </select></div>
-                        <div><label for="f-phone" class="block text-xs font-semibold uppercase text-gray-500 mb-2">Phone / WhatsApp</label><input id="f-phone" type="tel" name="phone" placeholder="03XX XXXXXXX" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-orange-500 text-sm"></div>
-                        <div><label for="f-city" class="block text-xs font-semibold uppercase text-gray-500 mb-2">City</label><input id="f-city" type="text" name="city" placeholder="e.g. Karachi" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-orange-500 text-sm"></div>
-                        <div class="md:col-span-2"><label for="f-msg" class="block text-xs font-semibold uppercase text-gray-500 mb-2">Message</label><textarea id="f-msg" name="message" rows="4" required placeholder="Which models and quantities are you looking for?" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-orange-500 text-sm resize-none"></textarea></div>
-                        <div class="md:col-span-2 flex justify-end"><button type="submit" class="inline-flex items-center gap-3 pl-6 pr-1.5 h-12 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 text-white font-medium">Send Enquiry <span class="w-9 h-9 rounded-full bg-[#0a1628] grid place-items-center"><i class="fa-solid fa-arrow-right text-sm"></i></span></button></div>
+                        <div><label for="f-phone" class="block text-sm font-medium text-gray-700 mb-2">Phone or WhatsApp</label><input id="f-phone" type="tel" name="phone" placeholder="03XX XXXXXXX" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-orange-500 text-sm"></div>
+                        <div><label for="f-city" class="block text-sm font-medium text-gray-700 mb-2">City</label><input id="f-city" type="text" name="city" placeholder="e.g. Karachi" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-orange-500 text-sm"></div>
+                        <div class="md:col-span-2"><label for="f-msg" class="block text-sm font-medium text-gray-700 mb-2">Message</label><textarea id="f-msg" name="message" rows="4" required placeholder="Which models and quantities are you looking for?" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-orange-500 text-sm resize-none"></textarea></div>
+                        <div class="md:col-span-2 flex justify-end"><button type="submit" class="inline-flex items-center gap-3 px-6 h-12 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-medium">Send enquiry</button></div>
                     </form>
                 </div>
             </div>
@@ -467,23 +435,23 @@
             <div>
                 <h4 class="text-white font-semibold mb-3">Company</h4>
                 <ul class="space-y-2">
-                    <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="about.html" class="hover:text-white transition-colors">About us</a></li>
                     <li><a href="vendors.html" class="hover:text-white transition-colors">Brands</a></li>
-                    <li><a href="services.html" class="hover:text-white transition-colors">Wholesale &amp; Retail</a></li>
+                    <li><a href="services.html" class="hover:text-white transition-colors">Wholesale &amp; retail</a></li>
                     <li><a href="index.html#contact" class="hover:text-white transition-colors">Contact</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-white font-semibold mb-3">We Accept</h4>
+                <h4 class="text-white font-semibold mb-3">We accept</h4>
                 <ul class="space-y-2">
-                    <li><i class="fa-solid fa-building-columns w-5 text-orange-500"></i> Bank Transfer</li>
-                    <li><i class="fa-solid fa-money-bill-wave w-5 text-orange-500"></i> Cash on Delivery</li>
+                    <li><i class="fa-solid fa-building-columns w-5 text-orange-500"></i> Bank transfer</li>
+                    <li><i class="fa-solid fa-money-bill-wave w-5 text-orange-500"></i> Cash on delivery</li>
                     <li><i class="fa-solid fa-mobile-screen w-5 text-orange-500"></i> JazzCash / Easypaisa</li>
-                    <li><i class="fa-solid fa-truck-fast w-5 text-orange-500"></i> Nationwide Delivery</li>
+                    <li><i class="fa-solid fa-truck-fast w-5 text-orange-500"></i> Nationwide delivery</li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-white font-semibold mb-3">Get in Touch</h4>
+                <h4 class="text-white font-semibold mb-3">Get in touch</h4>
                 <ul class="space-y-2">
                     <li><i class="fa-solid fa-location-dot w-5 text-orange-500"></i> Lahore, Pakistan</li>
                     <li><i class="fa-solid fa-envelope w-5 text-orange-500"></i> <a href="mailto:info@bizztech.online" class="hover:text-white">info@bizztech.online</a></li>
@@ -499,13 +467,6 @@
             <p class="max-w-6xl mx-auto px-5 py-5 text-xs text-gray-500">&copy; 2026 BIZZ.TECH, Lahore, Pakistan. All rights reserved. Brand names and logos belong to their respective owners.</p>
         </div>
     </footer>
-
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        document.querySelectorAll('[data-close-menu]').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-    </script>
     <script src="site.js" defer></script>
 </body>
 </html>

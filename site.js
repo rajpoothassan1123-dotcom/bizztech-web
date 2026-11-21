@@ -1,5 +1,13 @@
-// Submits Web3Forms forms in the background and shows a confirmation message
-// instead of leaving the page. Falls back to a normal submit if JS fails.
+// Mobile menu
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  mobileMenu.querySelectorAll('[data-close-menu]').forEach((a) => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+}
+
+// Forms post to Web3Forms in the background so visitors stay on the page.
+// Without JavaScript the form still submits normally.
 document.querySelectorAll('form[data-web3form]').forEach((form) => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -23,12 +31,12 @@ document.querySelectorAll('form[data-web3form]').forEach((form) => {
       });
       const data = await res.json();
       if (!res.ok || !data.success) throw new Error(data.message || 'Request failed');
-      msg.textContent = form.dataset.success || 'Thank you! We received your message.';
+      msg.textContent = form.dataset.success || 'Thank you. We received your message.';
       msg.classList.remove('text-red-600');
       msg.classList.add('text-green-700');
       form.reset();
-    } catch (err) {
-      msg.textContent = 'Sorry, something went wrong. Please email us at info@bizztech.online.';
+    } catch {
+      msg.textContent = "Your message didn't send. Check your connection and try again, or email info@bizztech.online.";
       msg.classList.remove('text-green-700');
       msg.classList.add('text-red-600');
     } finally {
@@ -37,10 +45,9 @@ document.querySelectorAll('form[data-web3form]').forEach((form) => {
   });
 });
 
-// ---- Homepage effects ----
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Statement text: words darken as you scroll past
+// Statement text darkens word by word as it scrolls into view
 document.querySelectorAll('.reveal-words').forEach((el) => {
   const words = el.textContent.trim().split(/\s+/);
   el.innerHTML = words.map((w) => `<span>${w}</span>`).join(' ');
@@ -84,7 +91,7 @@ if (qaForm) {
     const q = document.getElementById('qa-input').value.trim();
     const msg = document.getElementById('f-msg');
     if (q && msg) msg.value = q;
-    qaAnswer.textContent = q ? "Thanks! Add your contact details below and we'll reply with an answer and prices." : 'Type your question first.';
+    qaAnswer.textContent = q ? "Thanks. Add your contact details below and we'll reply with an answer and prices." : 'Type your question first.';
     if (q) document.getElementById('contact').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
   });
 }
